@@ -1,0 +1,35 @@
+<header>
+  <h1>Welcome To the Lazy Image Gallery</h1>
+  <div class="card" *ngFor="let item of data; let i=index">
+  <div class="gallery" *ngIf="i % 3== 0">
+    <div class="col" >
+        <h2>{{ item.Id }}</h2>
+        <figure class="gallery-item gallery-item-1 ">
+        <img class="hideOnLoad" src="https://selfservice.gstsystem.in/images/loading.gif">
+        <img appLazyLoad src="{{item.Url}}" alt="image">
+        <figcaption>{{item.Title}}</figcaption>
+      </figure>
+      </div>
+    <div class="col" *ngIf="i + 1 < data.length">
+        <h2 >{{ item.Id + 1 }}</h2>
+        <figure class="gallery-item gallery-item-2 ">
+        <img class="hideOnLoad" src="https://selfservice.gstsystem.in/images/loading.gif">
+        <img appLazyLoad src="{{item.Url + 1}}" alt="image">
+        <figcaption>{{item.Title + 1}}</figcaption>
+      </figure>
+    </div>
+    <div class="col" *ngIf="i + 2 < data.length">
+        <h2 >{{ item.Id + 2 }}</h2>
+        <figure class="gallery-item gallery-item-3 ">
+        <img class="hideOnLoad" src="https://selfservice.gstsystem.in/images/loading.gif">
+        <img appLazyLoad src="{{item.Url + 2}}" alt="image">
+        <figcaption>{{item.Title + 2}}</figcaption>
+        
+        </figure>
+    </div>
+  </div>
+</div>
+</header>
+<footer>
+  <h4>&copy;Piotr Kowalczyk</h4>
+</footer>

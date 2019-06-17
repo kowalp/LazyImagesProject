@@ -1,0 +1,152 @@
+$break-Thesmalles: 24.25rem;
+$break-smaller: 32.5rem;
+$break-small: 37.5rem;
+$break-medium: 46.88rem;
+$break-high: 50rem;
+
+
+header{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1200px;
+    h1 {
+        max-width: 1200px;
+        display:flex;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+.gallery {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    .col  {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 34%;
+        height: 250px;
+        color: black;
+        text-align: center;
+        margin-bottom: 50px;
+        @media (min-width: 66rem) {
+            margin-bottom: 100px;
+
+        }
+        h2 {
+            position: relative;
+            top:4vh;
+            font-size: 1rem;
+            @media screen and (min-width: $break-Thesmalles) {
+                top:40px;
+            }
+            @media screen and (min-width: $break-smaller) {
+                top:30px;
+            }
+            @media screen and (min-width: $break-small) {
+                top:10px;
+            }
+            @media screen and (min-width: $break-medium) {
+                top:0px;
+            }
+            @media screen and (min-width: $break-high) {
+                top:-10px;
+            }
+        }
+        figure {
+            .fade {
+                animation-name: slidein;
+                animation-duration: 2s;
+                animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+            img {
+                max-width:68%;
+                &:hover {
+                    animation-name: slidein;
+                    animation-duration: 1s;
+                    -webkit-transform: scale(1.02);
+                    transform: scale(1.02);
+                }
+            }
+            .hideOnLoad{
+                position: absolute;
+                display: flex;
+                margin-left: 15px;
+                margin-top: -3px;
+                animation-name: slidein;
+                animation-duration: 1s;
+                animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+                z-index: -1;
+                @media screen and (min-width: $break-smaller) {
+                    margin-left: 33px;
+                    margin-top: 8px;
+                }
+                @media screen and (min-width: $break-small) {
+                    margin-left: 47px;
+                    margin-top: 19px;
+                }
+                @media screen and (min-width: $break-medium) {
+                    margin-left: 71px;
+                    margin-top: 34px;
+                }
+                @media screen and (min-width: $break-high) {
+                    margin-left: 84px;
+                    margin-top: 39px;
+                }
+                @media (min-width: 55rem) {
+                    margin-left: 101px;
+                    margin-top: 53px;
+                }
+                @media (min-width: 61rem) {
+                    margin-left: 112px;
+                    margin-top: 60px;
+                }
+                @media (min-width: 65rem) {
+                    margin-left: 122px;
+                    margin-top: 71px;
+                }
+                @media (min-width: 73rem) {
+                    margin-left: 137px;
+                    margin-top: 83px;
+                }
+                @media (min-width: 1180px) {
+                    margin-left: 147px;
+                    margin-top: 88px;
+                }
+            }
+            figcaption{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+footer {
+    max-width: 1200px;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+  
+@keyframes slidein {
+    0% {
+      opacity:0;
+      margin-top:-100px;
+    }
+    
+    100% {
+      margin-top:0px;
+      opacity:1;
+    }
+  }
+ 
+ 
